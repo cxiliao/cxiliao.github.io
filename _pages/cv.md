@@ -1,64 +1,57 @@
 ---
 layout: archive
-title: "CV"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
+  - /cv-json/
+  - /resume-json
 ---
 
-{% include base_path %}
+## Education
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+**The Hong Kong University of Science and Technology (Guangzhou)**<br>
+PhD in Data Science and Analytics, September 2024 – June 2028 (expected)<br>
+Advisor: Prof. Zeyi Wen
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+**South China University of Technology**<br>
+BS in Software Engineering, September 2018 – June 2022
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Research Interests
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+Machine learning systems, with a focus on efficient long-context LLM inference through algorithm-system co-design, KV cache optimization, low-precision GPU computing, and speculative decoding.
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Technical Skills
+
+Python, C++, CUDA, TileLang, vLLM
+
+## Publications
+
+{% for post in site.publications reversed %}
+- **{% if post.paperurl %}[{{ post.title }}]({{ post.paperurl }}){% else %}{{ post.title }}{% endif %}**<br>
+  {{ post.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}<br>
+  *{{ post.venue }}*, {{ post.date | date: "%B %Y" }}.
+{% endfor %}
+
+## Teaching
+
+Teaching Assistant, The Hong Kong University of Science and Technology (Guangzhou):
+
+{% for post in site.teaching reversed %}
+- [{{ post.title }}]({{ post.url | relative_url }}), {{ post.term }}.
+{% endfor %}
+
+## Academic Service
+
+Conference Reviewer: NeurIPS 2026, ICLR 2026.
+
+## Honors
+
+- Postgraduate Studentship, HKUST(GZ)
+- Second-Class Scholarship, South China University of Technology
+
+## Contact
+
+Guangzhou, China<br>
+[chengxi_31@163.com](mailto:chengxi_31@163.com) · [GitHub](https://github.com/cxiliao)

@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Carlito";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/carlito-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Carlito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/carlito-latin-700-normal.woff2") format("woff2");
+}
+
+.academic-profile {
+  --profile-text: #293343;
+  --profile-heading: #192b40;
+  --profile-accent: #365e86;
+  --profile-muted: #626e7c;
+  --profile-tint: #edf3f8;
+  --profile-rule: #e2e8ee;
+  --profile-venue-text: #365e86;
+  font-family: Calibri, "Carlito", "Segoe UI", Arial, sans-serif;
+  color: var(--profile-text, #30343b);
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+
+  h1, h2, h3, .masthead__inner-wrap, .greedy-nav,
+  .sidebar p, .sidebar li, .sidebar .author__name,
+  .author__urls-wrapper, .page__footer-copyright {
+    font-family: inherit;
+  }
+
+  .masthead__inner-wrap { max-width: 1180px; }
+  .greedy-nav { font-size: 18px; }
+  .masthead__menu-item--lg { padding-right: 1em; }
+  .masthead { border-bottom-color: var(--profile-rule); }
+  .greedy-nav a { color: var(--profile-muted); }
+  .greedy-nav .masthead__menu-item--lg a { color: var(--profile-heading); }
+  .greedy-nav .visible-links a::before { background: var(--profile-accent); height: 2px; }
+  .greedy-nav a:hover { color: var(--profile-accent); }
+  a:focus-visible { outline: 2px solid var(--profile-accent); outline-offset: 4px; border-radius: 2px; }
+
+  .page__footer {
+    position: relative;
+    bottom: auto;
+    margin-top: 2rem;
+    color: var(--profile-muted, #626873);
+    background: var(--profile-tint);
+    border-top-color: var(--profile-rule);
+  }
+
+  .page__footer-follow { display: none; }
+}
+
+#main.academic-home {
+  max-width: 1180px;
+  margin-top: 1.25rem;
+}
+
+.academic-home {
+  .page__title {
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--profile-heading);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.65rem;
+  }
+
+  .page__content {
+    font-size: 19px;
+    line-height: 1.6;
+
+    > p { margin-bottom: 0.65rem; }
+    > h2 {
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--profile-heading);
+      letter-spacing: -0.025em;
+      margin: 1.55rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-color: var(--profile-rule);
+    }
+    > ul { margin-top: 0.4rem; }
+    > ul li { margin-bottom: 0.3rem; }
+    > ul li p { margin-bottom: 0.35rem; }
+
+    .publication-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .publication-entry {
+      margin: 0;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--profile-rule);
+      &:first-child { padding-top: 0; }
+      &:last-child { border-bottom: 0; }
+      p { margin: 0; }
+      .publication-title {
+        margin: 0 0 0.2rem;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--profile-heading);
+        letter-spacing: -0.005em;
+        line-height: 1.4;
+      }
+    }
+
+    .publication-authors {
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--profile-muted);
+      strong { font-weight: 700; color: var(--profile-text); }
+    }
+
+    .publication-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.4rem;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .publication-venue {
+      background: var(--profile-tint);
+      color: var(--profile-venue-text);
+      border: 0;
+      padding: 0.12rem 0.5rem;
+      border-radius: 5px;
+      font-weight: 400;
+    }
+
+    .paper-link {
+      color: var(--profile-accent);
+      text-decoration: none;
+      text-underline-offset: 0.2em;
+      padding: 0.12rem 0;
+      &:hover, &:focus-visible { text-decoration: underline; }
+    }
+
+    .publication-group {
+      margin: 0.9rem 0 0.55rem;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--profile-muted);
+    }
+
+    .education-entry {
+      display: grid;
+      grid-template-columns: 155px minmax(0, 1fr);
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+      h3 { margin: 0 0 0.1rem; font-size: 19px; font-weight: 700; color: var(--profile-heading); line-height: 1.45; }
+      p { margin: 0; font-size: 18px; line-height: 1.5; }
+      a {
+        color: inherit;
+        text-decoration: none;
+        text-underline-offset: 0.2em;
+        &:hover, &:focus-visible { color: var(--profile-accent); text-decoration: underline; }
+      }
+      .entry-date, .entry-detail { font-size: 16px; color: var(--profile-muted); }
+      .entry-date { padding-top: 0.1rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+      .entry-detail { margin-top: 0.15rem; }
+    }
+  }
+
+  .sidebar .author__name { font-size: 22px; font-weight: 700; color: var(--profile-heading); }
+  .sidebar p, .sidebar li, .author__urls a { font-size: 16px; }
+  .author__bio { color: var(--profile-muted); margin-bottom: 0.8rem; }
+  .author__urls a { color: var(--profile-muted); text-decoration: none; }
+  .author__urls a:hover { color: var(--profile-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+  .author__urls li > i { color: var(--profile-muted); }
+  .author__avatar img { border-color: var(--profile-rule); }
+
+  @media (min-width: 925px) {
+    .sidebar { width: 205px; max-width: 205px; }
+    .page { width: calc(100% - 245px); padding: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .page__content { font-size: 18px; }
+    .page__content .education-entry { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+}
+
+@media (max-width: 600px) {
+  .academic-profile .greedy-nav { font-size: 16px; }
+  .academic-profile .masthead__menu-item--lg { padding-right: 0.25em; }
+}
+
+html[data-theme="dark"] .academic-profile {
+  --profile-text: #dce3ed;
+  --profile-heading: #edf3fb;
+  --profile-accent: #a8c9eb;
+  --profile-muted: #b0bdce;
+  --profile-tint: #2b394a;
+  --profile-rule: #455264;
+  --profile-venue-text: #bfd8f1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

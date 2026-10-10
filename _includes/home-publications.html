@@ -1,0 +1,25 @@
+{% assign dated_publications = site.publications | sort: 'date' | reverse %}
+{% assign featured_publications = dated_publications | where: 'featured', true %}
+{% assign other_publications = dated_publications | where_exp: 'paper', 'paper.featured != true' %}
+{% assign publications = featured_publications | concat: other_publications %}
+{% assign publication_groups = 'conferences,manuscripts' | split: ',' %}
+{% for category in publication_groups %}
+{% assign papers = publications | where: 'category', category %}
+{% if papers.size > 0 %}
+{% if category == 'manuscripts' %}<h3 class="publication-group">Under review</h3>{% endif %}
+<ul class="publication-list">
+  {% for post in papers %}
+  <li class="publication-entry">
+    <h3 class="publication-title">{{ post.title | escape }}</h3>
+    <div class="publication-authors">{{ post.authors | markdownify }}</div>
+    {% if category == 'conferences' or post.paperurl %}
+    <div class="publication-meta">
+      {% if category == 'conferences' %}<span class="publication-venue">{{ post.venue | escape }}</span>{% endif %}
+      {% if post.paperurl %}<a class="paper-link" href="{{ post.paperurl }}" aria-label="Read {{ post.title | escape }}">Paper <span aria-hidden="true">↗</span></a>{% endif %}
+    </div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endfor %}

@@ -11,11 +11,16 @@ author_profile: true
 
 {% include base_path %}
 
+{% assign dated_publications = site.publications | sort: 'date' | reverse %}
+{% assign featured_publications = dated_publications | where: 'featured', true %}
+{% assign other_publications = dated_publications | where_exp: 'paper', 'paper.featured != true' %}
+{% assign ordered_publications = featured_publications | concat: other_publications %}
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
+    {% for post in ordered_publications %}
       {% if post.category != category[0] %}
         {% continue %}
       {% endif %}
@@ -27,7 +32,7 @@ author_profile: true
     {% endfor %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
+  {% for post in ordered_publications %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
