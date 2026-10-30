@@ -8,11 +8,11 @@
 <ul class="publication-list">
   {% for post in papers %}
   <li class="publication-entry">
-    <h3 class="publication-title">{{ post.title | escape }}</h3>
+    <h3 class="publication-title">{% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title | escape }}</a>{% else %}{{ post.title | escape }}{% endif %}</h3>
     <div class="publication-authors">{{ post.authors | markdownify }}</div>
     {% if post.venue or post.paperurl %}
     <div class="publication-meta">
-      {% if post.venue %}<span class="publication-venue">{{ post.venue | escape }}</span>{% endif %}
+      {% if post.venue %}<span class="publication-venue{% if post.category == 'manuscripts' %} publication-venue--preprint{% endif %}">{{ post.venue | escape }}</span>{% endif %}
       {% if post.paperurl %}<a class="paper-link" href="{{ post.paperurl }}" aria-label="Read {{ post.title | escape }}">Paper <span aria-hidden="true">↗</span></a>{% endif %}
     </div>
     {% endif %}

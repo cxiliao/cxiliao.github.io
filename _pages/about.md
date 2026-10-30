@@ -11,7 +11,7 @@ redirect_from:
 
 I am a third-year PhD candidate in Data Science and Analytics at The Hong Kong University of Science and Technology (Guangzhou), advised by Prof. Zeyi Wen.
 
-I work on machine learning systems for **efficient long-context inference in large language models**. My research brings together algorithm and system design, with a focus on KV cache optimization, low-precision GPU computing, and speculative decoding.
+I work on machine learning systems for efficient long-context inference in large language models. My research brings together algorithm and system design, with a focus on KV cache optimization, low-precision GPU computing, and speculative decoding.
 
 ## Publications
 

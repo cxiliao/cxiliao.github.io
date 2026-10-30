@@ -20,6 +20,14 @@
 {% endif %}
 
 <div class="page__footer-copyright">
+  {% if page.homepage %}
+  <div class="footer-summary">
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</span>
+    <span>Updated {{ site.time | date: '%Y-%m-%d' }} &middot; <a href="{{ base_path }}/sitemap/">Sitemap</a></span>
+  </div>
+  <div class="footer-credit">Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, based on <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+  {% else %}
   &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
   Site last updated {{ "now" | date: '%Y-%m-%d' }}, <a href="/sitemap/" style="text-transform: uppercase;">{{ site.data.ui-text[site.locale].site_map | default: "Sitemap" }}</a>
+  {% endif %}
 </div>
