@@ -38,9 +38,12 @@
   .masthead__menu-item--lg { padding-right: 1em; }
   .masthead { border-bottom-color: var(--profile-rule); }
   .greedy-nav a { color: var(--profile-muted); }
-  .greedy-nav .masthead__menu-item--lg a { color: var(--profile-heading); }
+  .greedy-nav .masthead__menu-item--lg a,
+  .greedy-nav .masthead__menu-item--lg a:hover { color: var(--profile-heading); }
   .greedy-nav .visible-links a::before { background: var(--profile-accent); height: 2px; }
+  .greedy-nav .masthead__menu-item--lg a::before { content: none; }
   .greedy-nav a:hover { color: var(--profile-accent); }
+  .greedy-nav a:focus:not(:focus-visible) { outline: none; }
   a:focus-visible { outline: 2px solid var(--profile-accent); outline-offset: 4px; border-radius: 2px; }
 
   .page__footer {

@@ -23,7 +23,7 @@ repository               : "cxiliao/cxiliao.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "chengxi-liao.jpg"
+  avatar           : "chengxi-liao-1.jpg"
   name             : "Chengxi Liao"
   pronouns         : # example: "she/her"  
   bio              : "Third-year PhD candidate"
@@ -87,7 +87,7 @@ publication_category:
   conferences:
     title: 'Conference Papers'
   manuscripts:
-    title: 'Under Review'
+    title: 'Preprint'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
